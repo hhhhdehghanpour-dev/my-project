@@ -8,7 +8,6 @@ RUN npm install
 
 COPY . .
 
-# Prisma generate فقط برای ساخت Client است و به دیتابیس وصل نمی‌شود
 ENV DATABASE_URL="postgresql://postgres:postgres@localhost:5432/userdb"
 
 RUN npx prisma generate
