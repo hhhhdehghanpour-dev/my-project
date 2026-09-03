@@ -8,8 +8,6 @@ RUN npm install
 
 COPY . .
 
-ENV DATABASE_URL="postgresql://postgres:postgres@localhost:5432/userdb"
-
 RUN npx prisma generate
 
 EXPOSE 3000

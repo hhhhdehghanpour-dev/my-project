@@ -15,4 +15,21 @@ model User {
   email     String   @unique
   password  String
   createdAt DateTime @default(now())
+
+  profile UserProfile?
+}
+
+model UserProfile {
+  id                Int    @id @default(autoincrement())
+  userId            Int    @unique
+  age               Int
+  gender            String
+  height            Float
+  weight            Float
+  targetWeight      Float
+  waist             Float?
+  bodyFat           Float?
+  weightChangeSpeed Float?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
