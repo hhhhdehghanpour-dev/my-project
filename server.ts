@@ -4,14 +4,16 @@ import express from "express";
 import registerRoutes from "./src/routes/register.routes";
 import loginRoutes from "./src/routes/login.routes";
 import profileRoutes from "./src/routes/profile.routes";
-
+import bodyCheckInRoutes from "./src/routes/bodyCheckIn.routes.ts";
+import bodyCheckInCompareRoutes from "./src/routes/bodyCheckInCompare.routes.ts";
 const app = express();
 
 app.use(express.json());
-
+app.use(bodyCheckInCompareRoutes);
 app.use(registerRoutes);
 app.use(loginRoutes);
 app.use(profileRoutes);
+app.use(bodyCheckInRoutes);
 
 app.get("/", (req, res) => {
   res.json({

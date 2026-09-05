@@ -16,7 +16,8 @@ model User {
   password  String
   createdAt DateTime @default(now())
 
-  profile UserProfile?
+  profile     UserProfile?
+  bodyCheckIns BodyCheckIn[]
 }
 
 model UserProfile {
@@ -32,4 +33,18 @@ model UserProfile {
   weightChangeSpeed Float?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model BodyCheckIn {
+  id       Int      @id @default(autoincrement())
+  userId   Int
+  weight   Float
+  waist    Float?
+  bodyFat  Float?
+  note     String?
+  checkedAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, checkedAt])
 }
