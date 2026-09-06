@@ -48,3 +48,12 @@ model BodyCheckIn {
 
   @@index([userId, checkedAt])
 }
+model Food {
+  id            Int    @id @default(autoincrement())
+  name          String
+  category      String
+  calories      Float
+  protein       Float
+  carbohydrates Float
+  fat           Float
+}

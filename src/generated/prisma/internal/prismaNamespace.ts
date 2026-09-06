@@ -398,7 +398,9 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 export const ModelName = {
   User: 'User',
-  UserProfile: 'UserProfile'
+  UserProfile: 'UserProfile',
+  BodyCheckIn: 'BodyCheckIn',
+  Food: 'Food'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -414,7 +416,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "userProfile"
+    modelProps: "user" | "userProfile" | "bodyCheckIn" | "food"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -566,6 +568,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    BodyCheckIn: {
+      payload: Prisma.$BodyCheckInPayload<ExtArgs>
+      fields: Prisma.BodyCheckInFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.BodyCheckInFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BodyCheckInPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.BodyCheckInFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BodyCheckInPayload>
+        }
+        findFirst: {
+          args: Prisma.BodyCheckInFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BodyCheckInPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.BodyCheckInFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BodyCheckInPayload>
+        }
+        findMany: {
+          args: Prisma.BodyCheckInFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BodyCheckInPayload>[]
+        }
+        create: {
+          args: Prisma.BodyCheckInCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BodyCheckInPayload>
+        }
+        createMany: {
+          args: Prisma.BodyCheckInCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.BodyCheckInCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BodyCheckInPayload>[]
+        }
+        delete: {
+          args: Prisma.BodyCheckInDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BodyCheckInPayload>
+        }
+        update: {
+          args: Prisma.BodyCheckInUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BodyCheckInPayload>
+        }
+        deleteMany: {
+          args: Prisma.BodyCheckInDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.BodyCheckInUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.BodyCheckInUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BodyCheckInPayload>[]
+        }
+        upsert: {
+          args: Prisma.BodyCheckInUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BodyCheckInPayload>
+        }
+        aggregate: {
+          args: Prisma.BodyCheckInAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateBodyCheckIn>
+        }
+        groupBy: {
+          args: Prisma.BodyCheckInGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.BodyCheckInGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.BodyCheckInCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.BodyCheckInCountAggregateOutputType> | number
+        }
+      }
+    }
+    Food: {
+      payload: Prisma.$FoodPayload<ExtArgs>
+      fields: Prisma.FoodFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.FoodFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FoodPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.FoodFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FoodPayload>
+        }
+        findFirst: {
+          args: Prisma.FoodFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FoodPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.FoodFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FoodPayload>
+        }
+        findMany: {
+          args: Prisma.FoodFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FoodPayload>[]
+        }
+        create: {
+          args: Prisma.FoodCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FoodPayload>
+        }
+        createMany: {
+          args: Prisma.FoodCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.FoodCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FoodPayload>[]
+        }
+        delete: {
+          args: Prisma.FoodDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FoodPayload>
+        }
+        update: {
+          args: Prisma.FoodUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FoodPayload>
+        }
+        deleteMany: {
+          args: Prisma.FoodDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.FoodUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.FoodUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FoodPayload>[]
+        }
+        upsert: {
+          args: Prisma.FoodUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$FoodPayload>
+        }
+        aggregate: {
+          args: Prisma.FoodAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateFood>
+        }
+        groupBy: {
+          args: Prisma.FoodGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.FoodGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.FoodCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.FoodCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -632,6 +782,32 @@ export const UserProfileScalarFieldEnum = {
 } as const
 
 export type UserProfileScalarFieldEnum = (typeof UserProfileScalarFieldEnum)[keyof typeof UserProfileScalarFieldEnum]
+
+
+export const BodyCheckInScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  weight: 'weight',
+  waist: 'waist',
+  bodyFat: 'bodyFat',
+  note: 'note',
+  checkedAt: 'checkedAt'
+} as const
+
+export type BodyCheckInScalarFieldEnum = (typeof BodyCheckInScalarFieldEnum)[keyof typeof BodyCheckInScalarFieldEnum]
+
+
+export const FoodScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  category: 'category',
+  calories: 'calories',
+  protein: 'protein',
+  carbohydrates: 'carbohydrates',
+  fat: 'fat'
+} as const
+
+export type FoodScalarFieldEnum = (typeof FoodScalarFieldEnum)[keyof typeof FoodScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -872,6 +1048,8 @@ export type PrismaClientOptions = PrismaClientOptionsWithAccelerateUrl | PrismaC
 export type GlobalOmitConfig = {
   user?: Prisma.UserOmit
   userProfile?: Prisma.UserProfileOmit
+  bodyCheckIn?: Prisma.BodyCheckInOmit
+  food?: Prisma.FoodOmit
 }
 
 /* Types for Logging */

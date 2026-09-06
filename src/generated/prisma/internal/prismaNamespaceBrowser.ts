@@ -52,7 +52,9 @@ export const AnyNull = runtime.AnyNull
 
 export const ModelName = {
   User: 'User',
-  UserProfile: 'UserProfile'
+  UserProfile: 'UserProfile',
+  BodyCheckIn: 'BodyCheckIn',
+  Food: 'Food'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -98,6 +100,32 @@ export const UserProfileScalarFieldEnum = {
 } as const
 
 export type UserProfileScalarFieldEnum = (typeof UserProfileScalarFieldEnum)[keyof typeof UserProfileScalarFieldEnum]
+
+
+export const BodyCheckInScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  weight: 'weight',
+  waist: 'waist',
+  bodyFat: 'bodyFat',
+  note: 'note',
+  checkedAt: 'checkedAt'
+} as const
+
+export type BodyCheckInScalarFieldEnum = (typeof BodyCheckInScalarFieldEnum)[keyof typeof BodyCheckInScalarFieldEnum]
+
+
+export const FoodScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  category: 'category',
+  calories: 'calories',
+  protein: 'protein',
+  carbohydrates: 'carbohydrates',
+  fat: 'fat'
+} as const
+
+export type FoodScalarFieldEnum = (typeof FoodScalarFieldEnum)[keyof typeof FoodScalarFieldEnum]
 
 
 export const SortOrder = {

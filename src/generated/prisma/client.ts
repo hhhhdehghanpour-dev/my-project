@@ -51,3 +51,13 @@ export type User = Prisma.UserModel
  * 
  */
 export type UserProfile = Prisma.UserProfileModel
+/**
+ * Model BodyCheckIn
+ * 
+ */
+export type BodyCheckIn = Prisma.BodyCheckInModel
+/**
+ * Model Food
+ * 
+ */
+export type Food = Prisma.FoodModel

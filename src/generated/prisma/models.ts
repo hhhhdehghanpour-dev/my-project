@@ -10,4 +10,6 @@
  */
 export type * from './models/User.ts'
 export type * from './models/UserProfile.ts'
+export type * from './models/BodyCheckIn.ts'
+export type * from './models/Food.ts'
 export type * from './commonInputTypes.ts'
