@@ -16,8 +16,9 @@ model User {
   password  String
   createdAt DateTime @default(now())
 
-  profile     UserProfile?
+  profile      UserProfile?
   bodyCheckIns BodyCheckIn[]
+  foodLogs     FoodLog[]
 }
 
 model UserProfile {
@@ -36,24 +37,46 @@ model UserProfile {
 }
 
 model BodyCheckIn {
-  id       Int      @id @default(autoincrement())
-  userId   Int
-  weight   Float
-  waist    Float?
-  bodyFat  Float?
-  note     String?
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  weight    Float
+  waist     Float?
+  bodyFat   Float?
+  note      String?
   checkedAt DateTime @default(now())
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId, checkedAt])
 }
+
 model Food {
-  id            Int    @id @default(autoincrement())
+  id            Int       @id @default(autoincrement())
   name          String
   category      String
   calories      Float
   protein       Float
   carbohydrates Float
   fat           Float
+
+  foodLogs FoodLog[]
+}
+
+model FoodLog {
+  id            Int      @id @default(autoincrement())
+  userId        Int
+  foodId        Int?
+  name          String
+  meal          String
+  quantity      Float
+  calories      Float
+  protein       Float
+  carbohydrates Float
+  fat           Float
+  eatenAt       DateTime @default(now())
+
+  user User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  food Food? @relation(fields: [foodId], references: [id], onDelete: SetNull)
+
+  @@index([userId, eatenAt])
 }

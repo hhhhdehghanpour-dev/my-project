@@ -234,6 +234,7 @@ export type UserWhereInput = {
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
   profile?: Prisma.XOR<Prisma.UserProfileNullableScalarRelationFilter, Prisma.UserProfileWhereInput> | null
   bodyCheckIns?: Prisma.BodyCheckInListRelationFilter
+  foodLogs?: Prisma.FoodLogListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -246,6 +247,7 @@ export type UserOrderByWithRelationInput = {
   createdAt?: Prisma.SortOrder
   profile?: Prisma.UserProfileOrderByWithRelationInput
   bodyCheckIns?: Prisma.BodyCheckInOrderByRelationAggregateInput
+  foodLogs?: Prisma.FoodLogOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -261,6 +263,7 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
   profile?: Prisma.XOR<Prisma.UserProfileNullableScalarRelationFilter, Prisma.UserProfileWhereInput> | null
   bodyCheckIns?: Prisma.BodyCheckInListRelationFilter
+  foodLogs?: Prisma.FoodLogListRelationFilter
 }, "id" | "phone" | "email">
 
 export type UserOrderByWithAggregationInput = {
@@ -300,6 +303,7 @@ export type UserCreateInput = {
   createdAt?: Date | string
   profile?: Prisma.UserProfileCreateNestedOneWithoutUserInput
   bodyCheckIns?: Prisma.BodyCheckInCreateNestedManyWithoutUserInput
+  foodLogs?: Prisma.FoodLogCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -312,6 +316,7 @@ export type UserUncheckedCreateInput = {
   createdAt?: Date | string
   profile?: Prisma.UserProfileUncheckedCreateNestedOneWithoutUserInput
   bodyCheckIns?: Prisma.BodyCheckInUncheckedCreateNestedManyWithoutUserInput
+  foodLogs?: Prisma.FoodLogUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserUpdateInput = {
@@ -323,6 +328,7 @@ export type UserUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   profile?: Prisma.UserProfileUpdateOneWithoutUserNestedInput
   bodyCheckIns?: Prisma.BodyCheckInUpdateManyWithoutUserNestedInput
+  foodLogs?: Prisma.FoodLogUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -335,6 +341,7 @@ export type UserUncheckedUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   profile?: Prisma.UserProfileUncheckedUpdateOneWithoutUserNestedInput
   bodyCheckIns?: Prisma.BodyCheckInUncheckedUpdateManyWithoutUserNestedInput
+  foodLogs?: Prisma.FoodLogUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -453,6 +460,20 @@ export type UserUpdateOneRequiredWithoutBodyCheckInsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutBodyCheckInsInput, Prisma.UserUpdateWithoutBodyCheckInsInput>, Prisma.UserUncheckedUpdateWithoutBodyCheckInsInput>
 }
 
+export type UserCreateNestedOneWithoutFoodLogsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutFoodLogsInput, Prisma.UserUncheckedCreateWithoutFoodLogsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutFoodLogsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutFoodLogsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutFoodLogsInput, Prisma.UserUncheckedCreateWithoutFoodLogsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutFoodLogsInput
+  upsert?: Prisma.UserUpsertWithoutFoodLogsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutFoodLogsInput, Prisma.UserUpdateWithoutFoodLogsInput>, Prisma.UserUncheckedUpdateWithoutFoodLogsInput>
+}
+
 export type UserCreateWithoutProfileInput = {
   firstName: string
   lastName: string
@@ -461,6 +482,7 @@ export type UserCreateWithoutProfileInput = {
   password: string
   createdAt?: Date | string
   bodyCheckIns?: Prisma.BodyCheckInCreateNestedManyWithoutUserInput
+  foodLogs?: Prisma.FoodLogCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutProfileInput = {
@@ -472,6 +494,7 @@ export type UserUncheckedCreateWithoutProfileInput = {
   password: string
   createdAt?: Date | string
   bodyCheckIns?: Prisma.BodyCheckInUncheckedCreateNestedManyWithoutUserInput
+  foodLogs?: Prisma.FoodLogUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutProfileInput = {
@@ -498,6 +521,7 @@ export type UserUpdateWithoutProfileInput = {
   password?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   bodyCheckIns?: Prisma.BodyCheckInUpdateManyWithoutUserNestedInput
+  foodLogs?: Prisma.FoodLogUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutProfileInput = {
@@ -509,6 +533,7 @@ export type UserUncheckedUpdateWithoutProfileInput = {
   password?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   bodyCheckIns?: Prisma.BodyCheckInUncheckedUpdateManyWithoutUserNestedInput
+  foodLogs?: Prisma.FoodLogUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutBodyCheckInsInput = {
@@ -519,6 +544,7 @@ export type UserCreateWithoutBodyCheckInsInput = {
   password: string
   createdAt?: Date | string
   profile?: Prisma.UserProfileCreateNestedOneWithoutUserInput
+  foodLogs?: Prisma.FoodLogCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutBodyCheckInsInput = {
@@ -530,6 +556,7 @@ export type UserUncheckedCreateWithoutBodyCheckInsInput = {
   password: string
   createdAt?: Date | string
   profile?: Prisma.UserProfileUncheckedCreateNestedOneWithoutUserInput
+  foodLogs?: Prisma.FoodLogUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutBodyCheckInsInput = {
@@ -556,6 +583,7 @@ export type UserUpdateWithoutBodyCheckInsInput = {
   password?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   profile?: Prisma.UserProfileUpdateOneWithoutUserNestedInput
+  foodLogs?: Prisma.FoodLogUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutBodyCheckInsInput = {
@@ -567,6 +595,69 @@ export type UserUncheckedUpdateWithoutBodyCheckInsInput = {
   password?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   profile?: Prisma.UserProfileUncheckedUpdateOneWithoutUserNestedInput
+  foodLogs?: Prisma.FoodLogUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserCreateWithoutFoodLogsInput = {
+  firstName: string
+  lastName: string
+  phone: string
+  email: string
+  password: string
+  createdAt?: Date | string
+  profile?: Prisma.UserProfileCreateNestedOneWithoutUserInput
+  bodyCheckIns?: Prisma.BodyCheckInCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutFoodLogsInput = {
+  id?: number
+  firstName: string
+  lastName: string
+  phone: string
+  email: string
+  password: string
+  createdAt?: Date | string
+  profile?: Prisma.UserProfileUncheckedCreateNestedOneWithoutUserInput
+  bodyCheckIns?: Prisma.BodyCheckInUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutFoodLogsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutFoodLogsInput, Prisma.UserUncheckedCreateWithoutFoodLogsInput>
+}
+
+export type UserUpsertWithoutFoodLogsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutFoodLogsInput, Prisma.UserUncheckedUpdateWithoutFoodLogsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutFoodLogsInput, Prisma.UserUncheckedCreateWithoutFoodLogsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutFoodLogsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutFoodLogsInput, Prisma.UserUncheckedUpdateWithoutFoodLogsInput>
+}
+
+export type UserUpdateWithoutFoodLogsInput = {
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  profile?: Prisma.UserProfileUpdateOneWithoutUserNestedInput
+  bodyCheckIns?: Prisma.BodyCheckInUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutFoodLogsInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  profile?: Prisma.UserProfileUncheckedUpdateOneWithoutUserNestedInput
+  bodyCheckIns?: Prisma.BodyCheckInUncheckedUpdateManyWithoutUserNestedInput
 }
 
 
@@ -576,10 +667,12 @@ export type UserUncheckedUpdateWithoutBodyCheckInsInput = {
 
 export type UserCountOutputType = {
   bodyCheckIns: number
+  foodLogs: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   bodyCheckIns?: boolean | UserCountOutputTypeCountBodyCheckInsArgs
+  foodLogs?: boolean | UserCountOutputTypeCountFoodLogsArgs
 }
 
 /**
@@ -599,6 +692,13 @@ export type UserCountOutputTypeCountBodyCheckInsArgs<ExtArgs extends runtime.Typ
   where?: Prisma.BodyCheckInWhereInput
 }
 
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountFoodLogsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.FoodLogWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -610,6 +710,7 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   createdAt?: boolean
   profile?: boolean | Prisma.User$profileArgs<ExtArgs>
   bodyCheckIns?: boolean | Prisma.User$bodyCheckInsArgs<ExtArgs>
+  foodLogs?: boolean | Prisma.User$foodLogsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -647,6 +748,7 @@ export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = run
 export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   profile?: boolean | Prisma.User$profileArgs<ExtArgs>
   bodyCheckIns?: boolean | Prisma.User$bodyCheckInsArgs<ExtArgs>
+  foodLogs?: boolean | Prisma.User$foodLogsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -657,6 +759,7 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   objects: {
     profile: Prisma.$UserProfilePayload<ExtArgs> | null
     bodyCheckIns: Prisma.$BodyCheckInPayload<ExtArgs>[]
+    foodLogs: Prisma.$FoodLogPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
@@ -1062,6 +1165,7 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   readonly [Symbol.toStringTag]: "PrismaPromise"
   profile<T extends Prisma.User$profileArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$profileArgs<ExtArgs>>): Prisma.Prisma__UserProfileClient<runtime.Types.Result.GetResult<Prisma.$UserProfilePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   bodyCheckIns<T extends Prisma.User$bodyCheckInsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$bodyCheckInsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BodyCheckInPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  foodLogs<T extends Prisma.User$foodLogsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$foodLogsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FoodLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1531,6 +1635,30 @@ export type User$bodyCheckInsArgs<ExtArgs extends runtime.Types.Extensions.Inter
   take?: number
   skip?: number
   distinct?: Prisma.BodyCheckInScalarFieldEnum | Prisma.BodyCheckInScalarFieldEnum[]
+}
+
+/**
+ * User.foodLogs
+ */
+export type User$foodLogsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the FoodLog
+   */
+  select?: Prisma.FoodLogSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the FoodLog
+   */
+  omit?: Prisma.FoodLogOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.FoodLogInclude<ExtArgs> | null
+  where?: Prisma.FoodLogWhereInput
+  orderBy?: Prisma.FoodLogOrderByWithRelationInput | Prisma.FoodLogOrderByWithRelationInput[]
+  cursor?: Prisma.FoodLogWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.FoodLogScalarFieldEnum | Prisma.FoodLogScalarFieldEnum[]
 }
 
 /**

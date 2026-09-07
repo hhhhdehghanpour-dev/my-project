@@ -54,7 +54,8 @@ export const ModelName = {
   User: 'User',
   UserProfile: 'UserProfile',
   BodyCheckIn: 'BodyCheckIn',
-  Food: 'Food'
+  Food: 'Food',
+  FoodLog: 'FoodLog'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -126,6 +127,23 @@ export const FoodScalarFieldEnum = {
 } as const
 
 export type FoodScalarFieldEnum = (typeof FoodScalarFieldEnum)[keyof typeof FoodScalarFieldEnum]
+
+
+export const FoodLogScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  foodId: 'foodId',
+  name: 'name',
+  meal: 'meal',
+  quantity: 'quantity',
+  calories: 'calories',
+  protein: 'protein',
+  carbohydrates: 'carbohydrates',
+  fat: 'fat',
+  eatenAt: 'eatenAt'
+} as const
+
+export type FoodLogScalarFieldEnum = (typeof FoodLogScalarFieldEnum)[keyof typeof FoodLogScalarFieldEnum]
 
 
 export const SortOrder = {

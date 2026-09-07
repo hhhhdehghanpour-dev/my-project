@@ -37,3 +37,8 @@ export type BodyCheckIn = Prisma.BodyCheckInModel
  * 
  */
 export type Food = Prisma.FoodModel
+/**
+ * Model FoodLog
+ * 
+ */
+export type FoodLog = Prisma.FoodLogModel
