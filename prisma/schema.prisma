@@ -19,6 +19,8 @@ model User {
   profile      UserProfile?
   bodyCheckIns BodyCheckIn[]
   foodLogs     FoodLog[]
+  waterLogs WaterLog[]
+  
 }
 
 model UserProfile {
@@ -79,4 +81,14 @@ model FoodLog {
   food Food? @relation(fields: [foodId], references: [id], onDelete: SetNull)
 
   @@index([userId, eatenAt])
+}
+model WaterLog {
+  id       Int      @id @default(autoincrement())
+  userId   Int
+  amount   Int
+  drankAt  DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, drankAt])
 }

@@ -401,7 +401,8 @@ export const ModelName = {
   UserProfile: 'UserProfile',
   BodyCheckIn: 'BodyCheckIn',
   Food: 'Food',
-  FoodLog: 'FoodLog'
+  FoodLog: 'FoodLog',
+  WaterLog: 'WaterLog'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -417,7 +418,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "userProfile" | "bodyCheckIn" | "food" | "foodLog"
+    modelProps: "user" | "userProfile" | "bodyCheckIn" | "food" | "foodLog" | "waterLog"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -791,6 +792,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    WaterLog: {
+      payload: Prisma.$WaterLogPayload<ExtArgs>
+      fields: Prisma.WaterLogFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.WaterLogFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WaterLogPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.WaterLogFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WaterLogPayload>
+        }
+        findFirst: {
+          args: Prisma.WaterLogFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WaterLogPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.WaterLogFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WaterLogPayload>
+        }
+        findMany: {
+          args: Prisma.WaterLogFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WaterLogPayload>[]
+        }
+        create: {
+          args: Prisma.WaterLogCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WaterLogPayload>
+        }
+        createMany: {
+          args: Prisma.WaterLogCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.WaterLogCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WaterLogPayload>[]
+        }
+        delete: {
+          args: Prisma.WaterLogDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WaterLogPayload>
+        }
+        update: {
+          args: Prisma.WaterLogUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WaterLogPayload>
+        }
+        deleteMany: {
+          args: Prisma.WaterLogDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.WaterLogUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.WaterLogUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WaterLogPayload>[]
+        }
+        upsert: {
+          args: Prisma.WaterLogUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$WaterLogPayload>
+        }
+        aggregate: {
+          args: Prisma.WaterLogAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateWaterLog>
+        }
+        groupBy: {
+          args: Prisma.WaterLogGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.WaterLogGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.WaterLogCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.WaterLogCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -900,6 +975,16 @@ export const FoodLogScalarFieldEnum = {
 } as const
 
 export type FoodLogScalarFieldEnum = (typeof FoodLogScalarFieldEnum)[keyof typeof FoodLogScalarFieldEnum]
+
+
+export const WaterLogScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  amount: 'amount',
+  drankAt: 'drankAt'
+} as const
+
+export type WaterLogScalarFieldEnum = (typeof WaterLogScalarFieldEnum)[keyof typeof WaterLogScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1143,6 +1228,7 @@ export type GlobalOmitConfig = {
   bodyCheckIn?: Prisma.BodyCheckInOmit
   food?: Prisma.FoodOmit
   foodLog?: Prisma.FoodLogOmit
+  waterLog?: Prisma.WaterLogOmit
 }
 
 /* Types for Logging */

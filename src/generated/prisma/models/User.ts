@@ -235,6 +235,7 @@ export type UserWhereInput = {
   profile?: Prisma.XOR<Prisma.UserProfileNullableScalarRelationFilter, Prisma.UserProfileWhereInput> | null
   bodyCheckIns?: Prisma.BodyCheckInListRelationFilter
   foodLogs?: Prisma.FoodLogListRelationFilter
+  waterLogs?: Prisma.WaterLogListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -248,6 +249,7 @@ export type UserOrderByWithRelationInput = {
   profile?: Prisma.UserProfileOrderByWithRelationInput
   bodyCheckIns?: Prisma.BodyCheckInOrderByRelationAggregateInput
   foodLogs?: Prisma.FoodLogOrderByRelationAggregateInput
+  waterLogs?: Prisma.WaterLogOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -264,6 +266,7 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   profile?: Prisma.XOR<Prisma.UserProfileNullableScalarRelationFilter, Prisma.UserProfileWhereInput> | null
   bodyCheckIns?: Prisma.BodyCheckInListRelationFilter
   foodLogs?: Prisma.FoodLogListRelationFilter
+  waterLogs?: Prisma.WaterLogListRelationFilter
 }, "id" | "phone" | "email">
 
 export type UserOrderByWithAggregationInput = {
@@ -304,6 +307,7 @@ export type UserCreateInput = {
   profile?: Prisma.UserProfileCreateNestedOneWithoutUserInput
   bodyCheckIns?: Prisma.BodyCheckInCreateNestedManyWithoutUserInput
   foodLogs?: Prisma.FoodLogCreateNestedManyWithoutUserInput
+  waterLogs?: Prisma.WaterLogCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -317,6 +321,7 @@ export type UserUncheckedCreateInput = {
   profile?: Prisma.UserProfileUncheckedCreateNestedOneWithoutUserInput
   bodyCheckIns?: Prisma.BodyCheckInUncheckedCreateNestedManyWithoutUserInput
   foodLogs?: Prisma.FoodLogUncheckedCreateNestedManyWithoutUserInput
+  waterLogs?: Prisma.WaterLogUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserUpdateInput = {
@@ -329,6 +334,7 @@ export type UserUpdateInput = {
   profile?: Prisma.UserProfileUpdateOneWithoutUserNestedInput
   bodyCheckIns?: Prisma.BodyCheckInUpdateManyWithoutUserNestedInput
   foodLogs?: Prisma.FoodLogUpdateManyWithoutUserNestedInput
+  waterLogs?: Prisma.WaterLogUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -342,6 +348,7 @@ export type UserUncheckedUpdateInput = {
   profile?: Prisma.UserProfileUncheckedUpdateOneWithoutUserNestedInput
   bodyCheckIns?: Prisma.BodyCheckInUncheckedUpdateManyWithoutUserNestedInput
   foodLogs?: Prisma.FoodLogUncheckedUpdateManyWithoutUserNestedInput
+  waterLogs?: Prisma.WaterLogUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -474,6 +481,20 @@ export type UserUpdateOneRequiredWithoutFoodLogsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutFoodLogsInput, Prisma.UserUpdateWithoutFoodLogsInput>, Prisma.UserUncheckedUpdateWithoutFoodLogsInput>
 }
 
+export type UserCreateNestedOneWithoutWaterLogsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutWaterLogsInput, Prisma.UserUncheckedCreateWithoutWaterLogsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutWaterLogsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutWaterLogsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutWaterLogsInput, Prisma.UserUncheckedCreateWithoutWaterLogsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutWaterLogsInput
+  upsert?: Prisma.UserUpsertWithoutWaterLogsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutWaterLogsInput, Prisma.UserUpdateWithoutWaterLogsInput>, Prisma.UserUncheckedUpdateWithoutWaterLogsInput>
+}
+
 export type UserCreateWithoutProfileInput = {
   firstName: string
   lastName: string
@@ -483,6 +504,7 @@ export type UserCreateWithoutProfileInput = {
   createdAt?: Date | string
   bodyCheckIns?: Prisma.BodyCheckInCreateNestedManyWithoutUserInput
   foodLogs?: Prisma.FoodLogCreateNestedManyWithoutUserInput
+  waterLogs?: Prisma.WaterLogCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutProfileInput = {
@@ -495,6 +517,7 @@ export type UserUncheckedCreateWithoutProfileInput = {
   createdAt?: Date | string
   bodyCheckIns?: Prisma.BodyCheckInUncheckedCreateNestedManyWithoutUserInput
   foodLogs?: Prisma.FoodLogUncheckedCreateNestedManyWithoutUserInput
+  waterLogs?: Prisma.WaterLogUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutProfileInput = {
@@ -522,6 +545,7 @@ export type UserUpdateWithoutProfileInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   bodyCheckIns?: Prisma.BodyCheckInUpdateManyWithoutUserNestedInput
   foodLogs?: Prisma.FoodLogUpdateManyWithoutUserNestedInput
+  waterLogs?: Prisma.WaterLogUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutProfileInput = {
@@ -534,6 +558,7 @@ export type UserUncheckedUpdateWithoutProfileInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   bodyCheckIns?: Prisma.BodyCheckInUncheckedUpdateManyWithoutUserNestedInput
   foodLogs?: Prisma.FoodLogUncheckedUpdateManyWithoutUserNestedInput
+  waterLogs?: Prisma.WaterLogUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutBodyCheckInsInput = {
@@ -545,6 +570,7 @@ export type UserCreateWithoutBodyCheckInsInput = {
   createdAt?: Date | string
   profile?: Prisma.UserProfileCreateNestedOneWithoutUserInput
   foodLogs?: Prisma.FoodLogCreateNestedManyWithoutUserInput
+  waterLogs?: Prisma.WaterLogCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutBodyCheckInsInput = {
@@ -557,6 +583,7 @@ export type UserUncheckedCreateWithoutBodyCheckInsInput = {
   createdAt?: Date | string
   profile?: Prisma.UserProfileUncheckedCreateNestedOneWithoutUserInput
   foodLogs?: Prisma.FoodLogUncheckedCreateNestedManyWithoutUserInput
+  waterLogs?: Prisma.WaterLogUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutBodyCheckInsInput = {
@@ -584,6 +611,7 @@ export type UserUpdateWithoutBodyCheckInsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   profile?: Prisma.UserProfileUpdateOneWithoutUserNestedInput
   foodLogs?: Prisma.FoodLogUpdateManyWithoutUserNestedInput
+  waterLogs?: Prisma.WaterLogUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutBodyCheckInsInput = {
@@ -596,6 +624,7 @@ export type UserUncheckedUpdateWithoutBodyCheckInsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   profile?: Prisma.UserProfileUncheckedUpdateOneWithoutUserNestedInput
   foodLogs?: Prisma.FoodLogUncheckedUpdateManyWithoutUserNestedInput
+  waterLogs?: Prisma.WaterLogUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutFoodLogsInput = {
@@ -607,6 +636,7 @@ export type UserCreateWithoutFoodLogsInput = {
   createdAt?: Date | string
   profile?: Prisma.UserProfileCreateNestedOneWithoutUserInput
   bodyCheckIns?: Prisma.BodyCheckInCreateNestedManyWithoutUserInput
+  waterLogs?: Prisma.WaterLogCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutFoodLogsInput = {
@@ -619,6 +649,7 @@ export type UserUncheckedCreateWithoutFoodLogsInput = {
   createdAt?: Date | string
   profile?: Prisma.UserProfileUncheckedCreateNestedOneWithoutUserInput
   bodyCheckIns?: Prisma.BodyCheckInUncheckedCreateNestedManyWithoutUserInput
+  waterLogs?: Prisma.WaterLogUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutFoodLogsInput = {
@@ -646,6 +677,7 @@ export type UserUpdateWithoutFoodLogsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   profile?: Prisma.UserProfileUpdateOneWithoutUserNestedInput
   bodyCheckIns?: Prisma.BodyCheckInUpdateManyWithoutUserNestedInput
+  waterLogs?: Prisma.WaterLogUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutFoodLogsInput = {
@@ -658,6 +690,73 @@ export type UserUncheckedUpdateWithoutFoodLogsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   profile?: Prisma.UserProfileUncheckedUpdateOneWithoutUserNestedInput
   bodyCheckIns?: Prisma.BodyCheckInUncheckedUpdateManyWithoutUserNestedInput
+  waterLogs?: Prisma.WaterLogUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserCreateWithoutWaterLogsInput = {
+  firstName: string
+  lastName: string
+  phone: string
+  email: string
+  password: string
+  createdAt?: Date | string
+  profile?: Prisma.UserProfileCreateNestedOneWithoutUserInput
+  bodyCheckIns?: Prisma.BodyCheckInCreateNestedManyWithoutUserInput
+  foodLogs?: Prisma.FoodLogCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutWaterLogsInput = {
+  id?: number
+  firstName: string
+  lastName: string
+  phone: string
+  email: string
+  password: string
+  createdAt?: Date | string
+  profile?: Prisma.UserProfileUncheckedCreateNestedOneWithoutUserInput
+  bodyCheckIns?: Prisma.BodyCheckInUncheckedCreateNestedManyWithoutUserInput
+  foodLogs?: Prisma.FoodLogUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutWaterLogsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutWaterLogsInput, Prisma.UserUncheckedCreateWithoutWaterLogsInput>
+}
+
+export type UserUpsertWithoutWaterLogsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutWaterLogsInput, Prisma.UserUncheckedUpdateWithoutWaterLogsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutWaterLogsInput, Prisma.UserUncheckedCreateWithoutWaterLogsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutWaterLogsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutWaterLogsInput, Prisma.UserUncheckedUpdateWithoutWaterLogsInput>
+}
+
+export type UserUpdateWithoutWaterLogsInput = {
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  profile?: Prisma.UserProfileUpdateOneWithoutUserNestedInput
+  bodyCheckIns?: Prisma.BodyCheckInUpdateManyWithoutUserNestedInput
+  foodLogs?: Prisma.FoodLogUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutWaterLogsInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  profile?: Prisma.UserProfileUncheckedUpdateOneWithoutUserNestedInput
+  bodyCheckIns?: Prisma.BodyCheckInUncheckedUpdateManyWithoutUserNestedInput
+  foodLogs?: Prisma.FoodLogUncheckedUpdateManyWithoutUserNestedInput
 }
 
 
@@ -668,11 +767,13 @@ export type UserUncheckedUpdateWithoutFoodLogsInput = {
 export type UserCountOutputType = {
   bodyCheckIns: number
   foodLogs: number
+  waterLogs: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   bodyCheckIns?: boolean | UserCountOutputTypeCountBodyCheckInsArgs
   foodLogs?: boolean | UserCountOutputTypeCountFoodLogsArgs
+  waterLogs?: boolean | UserCountOutputTypeCountWaterLogsArgs
 }
 
 /**
@@ -699,6 +800,13 @@ export type UserCountOutputTypeCountFoodLogsArgs<ExtArgs extends runtime.Types.E
   where?: Prisma.FoodLogWhereInput
 }
 
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountWaterLogsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.WaterLogWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -711,6 +819,7 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   profile?: boolean | Prisma.User$profileArgs<ExtArgs>
   bodyCheckIns?: boolean | Prisma.User$bodyCheckInsArgs<ExtArgs>
   foodLogs?: boolean | Prisma.User$foodLogsArgs<ExtArgs>
+  waterLogs?: boolean | Prisma.User$waterLogsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -749,6 +858,7 @@ export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   profile?: boolean | Prisma.User$profileArgs<ExtArgs>
   bodyCheckIns?: boolean | Prisma.User$bodyCheckInsArgs<ExtArgs>
   foodLogs?: boolean | Prisma.User$foodLogsArgs<ExtArgs>
+  waterLogs?: boolean | Prisma.User$waterLogsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -760,6 +870,7 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     profile: Prisma.$UserProfilePayload<ExtArgs> | null
     bodyCheckIns: Prisma.$BodyCheckInPayload<ExtArgs>[]
     foodLogs: Prisma.$FoodLogPayload<ExtArgs>[]
+    waterLogs: Prisma.$WaterLogPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
@@ -1166,6 +1277,7 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   profile<T extends Prisma.User$profileArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$profileArgs<ExtArgs>>): Prisma.Prisma__UserProfileClient<runtime.Types.Result.GetResult<Prisma.$UserProfilePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   bodyCheckIns<T extends Prisma.User$bodyCheckInsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$bodyCheckInsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BodyCheckInPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   foodLogs<T extends Prisma.User$foodLogsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$foodLogsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FoodLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  waterLogs<T extends Prisma.User$waterLogsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$waterLogsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$WaterLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1659,6 +1771,30 @@ export type User$foodLogsArgs<ExtArgs extends runtime.Types.Extensions.InternalA
   take?: number
   skip?: number
   distinct?: Prisma.FoodLogScalarFieldEnum | Prisma.FoodLogScalarFieldEnum[]
+}
+
+/**
+ * User.waterLogs
+ */
+export type User$waterLogsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the WaterLog
+   */
+  select?: Prisma.WaterLogSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the WaterLog
+   */
+  omit?: Prisma.WaterLogOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.WaterLogInclude<ExtArgs> | null
+  where?: Prisma.WaterLogWhereInput
+  orderBy?: Prisma.WaterLogOrderByWithRelationInput | Prisma.WaterLogOrderByWithRelationInput[]
+  cursor?: Prisma.WaterLogWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.WaterLogScalarFieldEnum | Prisma.WaterLogScalarFieldEnum[]
 }
 
 /**

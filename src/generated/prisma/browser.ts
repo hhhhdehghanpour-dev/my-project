@@ -42,3 +42,8 @@ export type Food = Prisma.FoodModel
  * 
  */
 export type FoodLog = Prisma.FoodLogModel
+/**
+ * Model WaterLog
+ * 
+ */
+export type WaterLog = Prisma.WaterLogModel
