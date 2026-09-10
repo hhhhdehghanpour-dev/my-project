@@ -12,11 +12,11 @@ import foodRoutes from "./src/routes/food.routes.ts";
 import foodLogRoutes from "./src/routes/foodLog.routes.ts";
 import dashboardRoutes from "./src/routes/dashboard.routes.ts";
 import waterRoutes from "./src/routes/water.routes.ts";
-
+import mealPlanRoutes from "./src/routes/mealPlan.routes.ts";
 const app = express();
 
 app.use(express.json());
-
+app.use(mealPlanRoutes);
 app.use(registerRoutes);
 app.use(loginRoutes);
 app.use(profileRoutes);
