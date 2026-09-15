@@ -79,6 +79,22 @@ export async function getDashboard(userId: number) {
     0
   );
 
+  // Daily water target based on user's weight
+  const waterTarget = Math.round(profile.weight * 30);
+
+  const waterRemaining = Math.max(
+    waterTarget - consumedWater,
+    0
+  );
+
+  const waterPercentage =
+    waterTarget > 0
+      ? Math.min(
+          Math.round((consumedWater / waterTarget) * 100),
+          100
+        )
+      : 0;
+
   const heightInMeters = profile.height / 100;
 
   const bmi =
@@ -156,7 +172,10 @@ export async function getDashboard(userId: number) {
     },
 
     water: {
+      target: waterTarget,
       consumed: consumedWater,
+      remaining: waterRemaining,
+      percentage: waterPercentage,
       logs: waterLogs,
     },
 
